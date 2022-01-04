@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Kentico.Kontent.ImageTransformation" Version="14.2.1" />
     <PackageReference Include="Kontent.Statiq" Version="1.0.0-*" />
     <PackageReference Include="Statiq.Web" Version="1.0.0-beta.*" />
   </ItemGroup>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Kentico.Kontent.Delivery.Abstractions;
+using FromZeroToHero.Models.ContentTypes;
 
 namespace FromZeroToHero.Models
 {
@@ -9,7 +10,15 @@ namespace FromZeroToHero.Models
     {
         private static readonly Dictionary<Type, string> _codenames = new Dictionary<Type, string>
         {
-            {typeof(Hero), "hero"}
+            {typeof(Article), "article"},
+            {typeof(Author), "author"},
+            {typeof(Contact), "contact"},
+            {typeof(Hero), "hero"},
+            {typeof(HomePage), "home_page"},
+            {typeof(LandingPageExampleContentType), "landing_page_example_content_type"},
+            {typeof(Page), "page"},
+            {typeof(ProductExampleContentType), "product_example_content_type"},
+            {typeof(SiteMetadata), "site_metadata"}
         };
 
         public Type GetType(string contentType)

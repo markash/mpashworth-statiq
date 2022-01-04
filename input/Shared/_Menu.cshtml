@@ -1,0 +1,6 @@
+@using FromZeroToHero.Models.ContentTypes
+@model List<Page>
+@foreach (var subPage in Model)
+{
+                        <a href="#" class="font-medium text-gray-500 hover:text-gray-900">@subPage.Title</a>
+}

@@ -1,4 +1,4 @@
-using FromZeroToHero.Models;
+using FromZeroToHero.Models.ContentTypes;
 using Kentico.Kontent.Delivery.Abstractions;
 using Kentico.Kontent.Delivery.Urls.QueryParameters;
 using Kentico.Kontent.Delivery.Urls.QueryParameters.Filters;
@@ -25,7 +25,7 @@ namespace FromZeroToHero
                 ),
                 new RenderRazor()
                     .WithModel(KontentConfig.As<Hero>()),
-                new SetDestination(new NormalizedPath("index.html")),
+                new SetDestination(new NormalizedPath("hero.html")),
                 new WriteFiles()
             };
         }

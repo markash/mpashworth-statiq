@@ -13,16 +13,28 @@ namespace FromZeroToHero
     public class Program
     {
         public static async Task<int> Main(string[] args) =>
-          await Bootstrapper
-            .Factory
-            .CreateWeb(args)
-            .ConfigureServices((services, config) =>
-            {
-                // Add the type provider
-                services.AddSingleton<ITypeProvider, CustomTypeProvider>();
-                // Configure Delivery SDK
-                services.AddDeliveryClient((IConfiguration)config);
-            })
-            .RunAsync();
+        //   await Bootstrapper
+        //     .Factory
+        //     .CreateWeb(args)
+        //     .ConfigureServices((services, config) =>
+        //     {
+        //         // Add the type provider
+        //         services.AddSingleton<ITypeProvider, CustomTypeProvider>();
+        //         // Configure Delivery SDK
+        //         services.AddDeliveryClient((IConfiguration)config);
+        //     })
+        //     .RunAsync();
+
+            await Bootstrapper
+                .Factory
+                .CreateDefault(args)
+                //.BuildConfiguration(cfg => cfg.AddUserSecrets<Program>())
+                .ConfigureServices((services, settings) =>
+                {
+                    services.AddSingleton<ITypeProvider, CustomTypeProvider>();
+                    services.AddDeliveryClient((IConfiguration)settings);
+                })
+                .AddHostingCommands()
+                .RunAsync();
     }
 }

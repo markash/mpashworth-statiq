@@ -64,3 +64,5 @@ All of the information about boilerplate creation and the content modeling in Ko
 ## Resources
 
 See more complex sample application: [Kontent Statiq - Lumen Starter](https://github.com/Kentico/statiq-starter-kontent-lumen)
+
+https://icon-icons.com/icon/sheep-animal/33918
