@@ -21,7 +21,7 @@ namespace FromZeroToHero
             {
                 new Kontent<Article>(client)
                     .WithQuery(
-                        new DepthParameter(1), 
+                        new DepthParameter(3), 
                         new IncludeTotalCountParameter()
                     ),
                 new SetDestination(Config.FromDocument((doc, ctx)  => new NormalizedPath($"articles/{doc.AsKontent<Article>().Url}.html" )))

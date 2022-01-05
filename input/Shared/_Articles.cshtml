@@ -3,26 +3,23 @@
 @foreach(var article in Model)
 {
     <div class="bg-white shadow-xl rounded-lg overflow-hidden">
-        <div class="bg-cover bg-center h-56 p-4"
-            style="background-image: url(@article.TitleImage?.Url)">
-
-        </div>
+        <div class="bg-cover bg-center h-56 p-4" style="background-image: url(@article.TitleImage?.Url)"></div>
         <div class="m-2 text-justify text-sm">
             <div class="flex flex-wrap items-center -mt-8 pb-3 ">
                 <img class="block h-8 w-8 rounded-full bg-white mt-1 mr-2 ml-3 border-2 border-white "
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEwsFRa_ZMCm8Jwm9oXFyV_irtl1kOq9QGg01TsL1YXpkP8oUu"
-                    alt="Perfil">
-                <span class="block text-lg font-bold text-white">Author</span>
+                    src="@article.PrimaryAuthor?.DefaultContact?.ProfileImage?.Url"
+                    alt="profile-image">
+                <span class="block text-lg font-bold text-white">@article.PrimaryAuthor?.Name</span>
 
             </div>
             <p class=" text-right  text-xs">metadata / Date </p>
             <h2 class=" font-bold h-2 mb-5 text-center">@article.Title</h2>
             <p class=" text-xs p-3">@article.Summary
-                <strong> Crédit image : <a href="https://pixabay.com/fr/users/geralt-9301/"></a></strong>
+                <strong>gdgdg</strong>
             </p>
         </div>
         <div class="w-full text-center">
-            <button class=" text-gray-400 text-lg mb-2"><i class="fas fa-plus-circle"></i></button>
+            <button class=" text-gray-400 text-lg mb-2"><i class="fas fa-plus-circle">sss</i></button>
         </div>
     </div>
 }

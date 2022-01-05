@@ -13,6 +13,7 @@ namespace FromZeroToHero.Models.ContentTypes
     public partial class Article
     {
         public const string Codename = "article";
+        public const string AuthorCodename = "author";
         public const string BodyCodename = "body";
         public const string ImageCodename = "image";
         public const string SummaryCodename = "summary";
@@ -20,6 +21,7 @@ namespace FromZeroToHero.Models.ContentTypes
         public const string TitleCodename = "title";
         public const string UrlCodename = "url";
 
+        public IEnumerable<object> Author { get; set; }
         public string Body { get; set; }
         public IEnumerable<IAsset> Image { get; set; }
         public string Summary { get; set; }
