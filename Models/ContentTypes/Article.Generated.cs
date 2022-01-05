@@ -14,11 +14,15 @@ namespace FromZeroToHero.Models.ContentTypes
     {
         public const string Codename = "article";
         public const string BodyCodename = "body";
+        public const string ImageCodename = "image";
+        public const string SummaryCodename = "summary";
         public const string TaxonomyCategorizingTargetAudienceCodename = "taxonomy_categorizing_target_audience";
         public const string TitleCodename = "title";
         public const string UrlCodename = "url";
 
         public string Body { get; set; }
+        public IEnumerable<IAsset> Image { get; set; }
+        public string Summary { get; set; }
         public IContentItemSystemAttributes System { get; set; }
         public IEnumerable<ITaxonomyTerm> TaxonomyCategorizingTargetAudience { get; set; }
         public string Title { get; set; }

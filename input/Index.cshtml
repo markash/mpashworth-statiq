@@ -98,6 +98,12 @@
             <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
         </div>
     </div>
+
+    if (Model.Articles != null && Model.Articles.Count > 0)
+    {
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 m-5 mb-10">
+        @await Html.PartialAsync("Shared/_Articles", Model.Articles)    
+    </div>
+    }
     
-    @await Html.PartialAsync("Shared/_Articles", Model.Hero)
 }

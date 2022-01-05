@@ -16,10 +16,10 @@ namespace FromZeroToHero
     {
         public HomePipeline(IDeliveryClient client)
         {
-            Dependencies.AddRange(nameof(HomePagePipeline), nameof(SiteMetadataPipeline));
+            Dependencies.AddRange(nameof(ArticlePipeline), nameof(HomePagePipeline), nameof(SiteMetadataPipeline));
             ProcessModules = new ModuleList
             {
-                new ReplaceDocuments(Dependencies.ToArray()),
+                new ReplaceDocuments(nameof(HomePagePipeline)),
                 new SetDestination(Config.FromDocument((doc, ctx) => Filename(doc))),
                 new MergeContent(
                     new ReadFiles(patterns: "Index.cshtml")
@@ -27,24 +27,24 @@ namespace FromZeroToHero
                 new RenderRazor()
                     .WithModel(Config.FromDocument((document, context) =>
                     {
+                        System.Console.WriteLine($"Text {document}");
+
                         var homePage = context.Outputs
                             .FromPipeline(nameof(HomePagePipeline))
                             .Select(x => x.AsKontent<HomePage>())
-                            .FirstOrDefault();
+                            .FirstOrDefault();                        
 
-                        System.Console.WriteLine(homePage);
-
-                        
+                        var articles = context.Outputs
+                            .FromPipeline(nameof(ArticlePipeline))
+                            .Select(x => x.AsKontent<Article>())
+                            .ToList();
 
                         var metadata = context.Outputs
                             .FromPipeline(nameof(SiteMetadataPipeline))
                             .Select(x => x.AsKontent<SiteMetadata>())
                             .FirstOrDefault();
 
-                        System.Console.WriteLine($"Blah {metadata.Title}");
-                        System.Console.WriteLine(metadata?.Title);
-
-                        return new HomeViewModel(homePage, metadata);
+                        return new HomeViewModel(homePage, articles, metadata);
                     }
                     ))
             };
@@ -56,6 +56,8 @@ namespace FromZeroToHero
 
         private static NormalizedPath Filename(IDocument document)
         {
+            System.Console.WriteLine(document.Id);
+
             var index = document.GetInt(Keys.Index);
 
             return new NormalizedPath($"{(index > 1 ? $"page/{index}/" : "")}index.html");
