@@ -44,7 +44,8 @@ namespace FromZeroToHero
 
                         return new HomeViewModel(homePage, articles, metadata);
                     }
-                    ))
+                    )),
+                new KontentImageProcessor()
             };
 
             OutputModules = new ModuleList {

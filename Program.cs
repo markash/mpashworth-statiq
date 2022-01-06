@@ -22,6 +22,7 @@ namespace FromZeroToHero
                 {
                     services.AddSingleton<ITypeProvider, CustomTypeProvider>();
                     services.AddDeliveryClient((IConfiguration)settings);
+
                 })
                 .AddHostingCommands()
                 .RunAsync();
