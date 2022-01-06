@@ -1,5 +1,5 @@
-using Statiq.Core;
 using Statiq.Common;
+using Statiq.Core;
 
 namespace FromZeroToHero.Pipelines
 {

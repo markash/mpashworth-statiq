@@ -1,5 +1,5 @@
-using Kentico.Kontent.Delivery.Abstractions;
 using FromZeroToHero.Models.ContentTypes;
+using Kentico.Kontent.Delivery.Abstractions;
 
 namespace FromZeroToHero.Pipelines
 {

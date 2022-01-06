@@ -1,8 +1,8 @@
+using FromZeroToHero.Models.ContentTypes;
+using Kentico.Kontent.Delivery.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Kentico.Kontent.Delivery.Abstractions;
-using FromZeroToHero.Models.ContentTypes;
 
 namespace FromZeroToHero.Models
 {

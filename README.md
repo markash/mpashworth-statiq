@@ -1,38 +1,32 @@
 # Statiq boilerplate for Kontent
 
-![Build and publish](https://github.com/Kentico/kontent-boilerplate-statiq-net/workflows/Publish/badge.svg)
-[![Live Demo](https://img.shields.io/badge/Live-DEMO-brightgreen.svg?logo=github&logoColor=white)](https://kentico.github.io/kontent-boilerplate-statiq-net)
-
-Boilerplate utilizing [Statiq](https://statiq.dev/) and [Kontent by Kentico](https://kontent.ai) to provide a starting point in the Jamstack world for .NET developers.
+![Build and publish](https://github.com/markash/mpashworth-statiq/workflows/Publish/badge.svg)
+[![Live Demo](https://black-pebble-0a0b71810.azurestaticapps.net/)](https://https://black-pebble-0a0b71810.azurestaticapps.net/)
 
 ![Screenshot](./screenshot.png)
 
+## Technology
+[Statiq](https://statiq.dev/)
+[Kontent by Kentico](https://kontent.ai)
+
 ## Get started
-
-### Requirements
-
-- [.NET 5](https://dotnet.microsoft.com/download)
-
-### Clone the codebase
-
-1. Click the ["Use this template"](https://github.com/petrsvihlik/statiq-starter-kontent-lumen/generate) button to [create your own repository from this template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
 
 ### Running locally
 
-```sh
+```bat
 dotnet run -- preview
 ```
 
-🎊🎉 **Visit <http://localhost:5080> and start exploring the code base!**
+Browse <http://localhost:5080>
 
-> By default, the content is loaded from a shared Kontent project. If you want to use your own clone of the project so that you can customize it and experiment with Kontent, continue to the next section.
+### Generate typesafe models
 
-### Create a content source
+```bat
+ModelGenerator.bat
+````
 
-1. Go to [app.kontent.ai](https://app.kontent.ai) and [create an empty project](https://docs.kontent.ai/tutorials/set-up-kontent/projects/manage-projects#a-creating-projects)
-1. Go to the "Project Settings", select API keys and copy the following keys for further reference
-    - Project ID
-    - Management API key
+### Backup and restore content
+
 1. Use the [Template Manager UI](https://kentico.github.io/kontent-template-manager/import) for importing the content from [`kontent-backup.zip`](./kontent-backup.zip) file and API keys from previous step. Check *Publish language variants after import* option before import.
 
     > Alternatively, you can use the [Kontent Backup Manager](https://github.com/Kentico/kontent-backup-manager-js) and import data to the newly created project from [`content.zip`](./content.zip) file via command line:
@@ -45,24 +39,18 @@ dotnet run -- preview
     >
     > Go to your Kontent project and [publish all the imported items](https://docs.kontent.ai/tutorials/write-and-collaborate/publish-your-work/publish-content-items).
 
-1. Map the codebase to the data source
-    - adjust the `ProjectId` property in [appsettings.json](./appsettings.json) with your project ID.
-
-🚀 **You are now ready to use the site with your own Kontent project as data source on <http://localhost:5080>!** 🚀
 
 ## Features
 
 - [Kontent Model Generator](https://github.com/Kentico/kontent-generators-net) for generating strongly-typed models from Kontent model.
 - [Kontent.Statiq](https://www.nuget.org/packages/Kontent.Statiq) module for simple data loading from Kontent to strongly-typed models
-- [Sass](https://sass-lang.com/) initial styles for easier style including [reset.css](http://meyerweb.com/eric/tools/css/reset/)
 - Razor template engine setup with simple layout
-
-## How it's build
-
-All of the information about boilerplate creation and the content modeling in Kontent have been written up on the blog post [Jamstack on .NET - From zero to hero with Statiq and Kontent](https://ondrej.chrastina.tech/journal/jamstack-on-net-from-zero-to-hero-with-statiq-and-kontent).
 
 ## Resources
 
-See more complex sample application: [Kontent Statiq - Lumen Starter](https://github.com/Kentico/statiq-starter-kontent-lumen)
+[Jamstack on .NET - From zero to hero with Statiq and Kontent](https://ondrej.chrastina.tech/journal/jamstack-on-net-from-zero-to-hero-with-statiq-and-kontent)
+[Kontent Statiq - Lumen Starter](https://github.com/Kentico/statiq-starter-kontent-lumen)
+
+## Icons
 
 https://icon-icons.com/icon/sheep-animal/33918

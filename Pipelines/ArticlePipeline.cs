@@ -1,13 +1,12 @@
 using FromZeroToHero.Models.ContentTypes;
 using FromZeroToHero.Models.ViewModels;
+using FromZeroToHero.Pipelines;
 using Kentico.Kontent.Delivery.Abstractions;
 using Kentico.Kontent.Delivery.Urls.QueryParameters;
-using Kentico.Kontent.Delivery.Urls.QueryParameters.Filters;
 using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
 using Statiq.Razor;
-using FromZeroToHero.Pipelines;
 using System.Linq;
 
 namespace FromZeroToHero
@@ -21,7 +20,7 @@ namespace FromZeroToHero
             {
                 new Kontent<Article>(client)
                     .WithQuery(
-                        new DepthParameter(3), 
+                        new DepthParameter(3),
                         new IncludeTotalCountParameter()
                     ),
                 new SetDestination(Config.FromDocument((doc, ctx)  => new NormalizedPath($"articles/{doc.AsKontent<Article>().Url}.html" )))

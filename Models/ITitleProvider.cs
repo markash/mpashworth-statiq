@@ -9,5 +9,5 @@ namespace FromZeroToHero.Models
         IContentItemSystemAttributes System { get; }
 
         string ElementCodename { get; }
-    }    
+    }
 }

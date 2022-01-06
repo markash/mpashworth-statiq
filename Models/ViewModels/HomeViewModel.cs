@@ -1,6 +1,6 @@
-using System.Linq;
 using FromZeroToHero.Models.ContentTypes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FromZeroToHero.Models.ViewModels
 {

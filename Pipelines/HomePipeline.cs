@@ -2,8 +2,6 @@ using FromZeroToHero.Models.ContentTypes;
 using FromZeroToHero.Models.ViewModels;
 using FromZeroToHero.Pipelines;
 using Kentico.Kontent.Delivery.Abstractions;
-using Kentico.Kontent.Delivery.Urls.QueryParameters;
-using Kentico.Kontent.Delivery.Urls.QueryParameters.Filters;
 using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
@@ -32,7 +30,7 @@ namespace FromZeroToHero
                         var homePage = context.Outputs
                             .FromPipeline(nameof(HomePagePipeline))
                             .Select(x => x.AsKontent<HomePage>())
-                            .FirstOrDefault();                        
+                            .FirstOrDefault();
 
                         var articles = context.Outputs
                             .FromPipeline(nameof(ArticlePipeline))
