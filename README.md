@@ -1,7 +1,7 @@
 # Statiq boilerplate for Kontent
 
 ![Build and publish](https://github.com/markash/mpashworth-statiq/workflows/Publish/badge.svg)
-[![Live Demo](https://black-pebble-0a0b71810.azurestaticapps.net/)](https://https://black-pebble-0a0b71810.azurestaticapps.net/)
+[![Live Demo](https://black-pebble-0a0b71810.azurestaticapps.net/)](https://black-pebble-0a0b71810.azurestaticapps.net/)
 
 ![Screenshot](./screenshot.png)
 
